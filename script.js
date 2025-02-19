@@ -376,3 +376,446 @@ const sameElement=(arr,arr1)=>{
   return result
 }
 console.log(sameElement(arr,arr1))
+
+/*
+15.Write a program to print the multiplication table of a given number using a nested for loop.
+
+16.Write a program to print a pattern of stars using a nested for loop.
+
+17.Write a program to print the Pascal's triangle using a nested for loop.
+
+*/
+
+//1.Write a program to print the numbers from 1 to 10 using a for loop.
+
+const print_Number = () => {
+  for (let i = 1; i <= 10; i++) {
+    console.log(i);
+  }
+};
+//print_Number();
+
+//---------------------------------------------------------------------------------------------------------
+
+//2.Write a program to print the even numbers between 1 and 20 using a for loop.
+
+const evenNo = () => {
+  for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) {
+      console.log(i);
+    }
+  }
+};
+// evenNo();
+
+//------------------------------------------------------------------------------------------------------------
+
+//3.Write a program to print the odd numbers between 1 and 20 using a for loop.
+
+const oddNo = () => {
+  for (let i = 1; i <= 20; i++) {
+    if (i % 2 != 0) {
+      console.log(i);
+    }
+  }
+};
+// oddNo();
+
+//-------------------------------------------------------------------------------------------------------------
+
+//4.Write a program to print the sum of numbers from 1 to 10 using a for loop.
+
+const sumNo = () => {
+  let sum = 0;
+  for (let i = 1; i <= 10; i++) {
+    sum += i;
+  }
+  return sum;
+};
+// console.log(sumNo());
+
+//--------------------------------------------------------------------------------------------------------------
+
+//5.Write a program to print the product of numbers from 1 to 10 using a for loop.
+
+const productNo = () => {
+  let product = 1;
+  for (let i = 1; i <= 10; i++) {
+    product *= i;
+  }
+  console.log(product);
+};
+// productNo();
+
+//----------------------------------------------------------------------------------------------------------
+
+//6.Write a program to find the factorial of a given number using a for loop.
+
+const factorial = (n) => {
+  let f = n;
+  for (f = n; n - 1 > 0; n--) {
+    f = f * (n - 1);
+  }
+  return f;
+};
+// console.log(factorial(5))
+
+//------------------------------------------------------------------------------------------------------
+
+//7.Write a program to print the Fibonacci series up to a given number using a for loop.
+
+const Fibonacci = (n) => {
+  let first = 0;
+  let second = 1;
+  let next;
+  
+  for (let i = 1; i <= n; i++) {
+    next = first + second;
+    first = second;
+    second = next;
+  }
+  return first;
+};
+// console.log(Fibonacci(0));
+// console.log(Fibonacci(1));
+// console.log(Fibonacci(2));
+// console.log(Fibonacci(3));
+// console.log(Fibonacci(4));
+
+//---------------------------------------------------------------------------------------------------------------
+
+//8. a program to check if a given number is a prime number using a for loop.
+
+const checkPrimeNo = (n) => {
+  let flag = true;
+  for (let i = 0; i < n; i++) {
+    if (n % i == 0) {
+      if (i != 1 && i != n) {
+        flag = false;
+        break;
+      }
+    }
+  }
+  return flag;
+};
+// console.log(checkPrimeNo(3))
+
+//------------------------------------------------------------------------------------------------------------
+
+//9.Write a program to check if a given number is a perfect number using a for loop.
+
+const perfectNo = (n) => {
+  let sum = 0;
+  for (let i = 1; i <= n / 2; i++) {
+    if (n % i === 0) {
+      sum += i;
+    }
+  }
+  if (sum === n) {
+    return true;
+  } else {
+    return false;
+  }
+};
+// console.log(perfectNo(282));
+
+//------------------------------------------------------------------------------------------------------------
+
+//10.Write a program to find the sum of digits of a given number using a while loop.
+
+const sumOfDigit = (n) => {
+  let sum = 0;
+  while (n != 0) {
+    sum += n % 10;
+    n = parseInt(n / 10);
+  }
+  return sum;
+};
+// console.log(sumOfDigit(123445));
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+//11.Write a program to reverse a given number using a while loop.
+
+const reverseNo = (n) => {
+  let reverse = 0;
+  while (n != 0) {
+    reverse = reverse * 10 + (n % 10);
+    n = parseInt(n / 10);
+  }
+  return reverse;
+};
+// console.log(reverseNo(12345));
+
+//----------------------------------------------------------------------------------------------------------------------------
+
+//12.Write a program to check if a given number is a palindrome using a while loop.
+
+const checkPalindrome = (n) => {
+  let orignalNumber = n;
+  let reverse = 0;
+
+  while (n != 0) {
+    reverse = reverse * 10 + (n % 10);
+    n = parseInt(n / 10);
+  }
+  if (orignalNumber === reverse) {
+    return true;
+  } else {
+    return false;
+  }
+};
+// console.log(checkPalindrome(121));
+
+//------------------------------------------------------------------------------------------------------------------------------------
+
+//13.Write a program to find the GCD of two numbers using a while loop.
+
+const gcdOfTwoNumbers =(a,b)=>{
+    let gcd;
+    let i=0
+    while(i<=a && i<=b){
+        if(a%i==0 && b%i==0){
+            gcd=i
+        }
+        i++;
+    }
+    return gcd
+}
+//  console.log(gcdOfTwoNumbers(28,42))
+
+//-----------------------------------------------------------------------------------------------------------------
+
+//14.Write a program to find the LCM of two numbers using a while loop.
+
+const lcmOfTwoNumbers =(a,b)=>{
+    let gcd;
+    let lcm;
+    let i=0
+    while(i<=a && i<=b){
+        if(a%i==0 && b%i==0){
+            gcd=i
+        }
+        i++;
+    }
+    return lcm=(a*b)/gcd
+}
+// console.log(lcmOfTwoNumbers(28,42))
+
+//------------------------------------------------------------------------------------------------------------
+
+// 18.Write a program to find the largest number in an array using a for loop.
+
+const largestNo = (arr) => {
+  let l = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > l) {
+      l = arr[i];
+    }
+  }
+  return l;
+};
+// console.log(largestNo([1,2,3,4]));
+
+//------------------------------------------------------------------------------------------------------------------------
+
+// 19.Write a program to find the smallest number in an array using a for loop.
+
+const smallestNo = (arr) => {
+  let s = Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < s) {
+      s = arr[i];
+    }
+  }
+  return s;
+};
+// console.log(smallestNo([1,2,3,4]));
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+// 20.Write a program to find the sum of an array of numbers using a for loop.
+
+const sumOfArray = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+};
+// console.log(sumOfArray([1, 2, 3, 4]));
+
+//---------------------------------------------------------------------------------------------------
+
+//Write a program to find the sum of all elements in an array.
+
+const sumOfElement=(arr)=>{
+  let sum =0;
+  for(let i=0;i<arr.length;i++){
+sum+=arr[i]
+  }
+  return sum;
+}
+// console.log(sumOfElement([1,2,3,4,5]));
+
+//-----------------------------------------------------------------------------------------------------------
+
+//Write a program to find the average of all elements in an array.
+
+const averageOfElement=(arr)=>{
+  let sum=0;
+  let avg=0;
+  for(let i=0;i<arr.length;i++){
+    sum+=arr[i];
+    avg=sum/arr[i]
+  }
+  return avg
+}
+// console.log(averageOfElement([1,2,3,4,5]));
+
+//---------------------------------------------------------------------------------------------------------------
+
+//Write a program to find the maximum and minimum elements in an array.
+
+const maxAndMin=(arr)=>{
+  let max=0;
+  let min=Infinity;
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]>max){
+      max=arr[i];
+    }
+  }
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]<min){
+      min=arr[i];
+    }
+  }
+  return [max,min]
+}
+// console.log(maxAndMin([1,2,3,4]));
+
+//--------------------------------------------------------------------------------------------------------
+
+//Write a program to reverse an array.
+
+const reverseArray=(arr)=>{
+  let newArr=[]
+  for( i=arr.length-1;i>=0;i--){
+  newArr.push(arr[i])
+  }
+  return newArr;
+}
+// console.log(reverseArray([1,2,3,4,5]))
+
+//or
+
+const reversearray=(arr)=> {
+  for (let i = 0; i< arr.length/2; i ++){
+    let temp =  arr[i]
+  arr[i] = arr[arr.length -(i+1)]
+  arr[arr.length -(i+1)] = temp
+}
+return arr
+}
+// console.log(reversearray([1,2,3,4,5]));
+
+//---------------------------------------------------------------------------------------------------
+
+//Write a program to sort an array in ascending order.
+
+const sortArrayAscending=(arr)=>{
+  for(let i=0;i<arr.length;i++){
+    for(let j=0;j<arr.length;j++){
+      if(arr[j]>arr[j+1]){
+        let temp = arr[j];
+        arr[j]=arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+  return arr
+}
+// console.log(sortArrayAscending([4,2,1,5,3]));
+
+//-----------------------------------------------------------------------------------------------
+
+//Write a program to sort an array in descending order.
+
+const sortArrayDescending=(arr)=>{
+  for(let i=0;i<arr.length;i++){
+    for(let j=0;j<arr.length;j++){
+      if(arr[j]<arr[j+1]){
+        let temp = arr[j];
+        arr[j]=arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+  return arr
+}
+// console.log(sortArrayDescending([4,2,1,5,3]));
+
+//---------------------------------------------------------------------------------------------------------------
+
+// Write a program to remove duplicate elements from an array.
+
+const removeDuplicate=(arr)=>{
+  let result =[];
+  let obj={};
+  for(let i=0;i<arr.length;i++){
+    obj[arr[i]]=arr[i]
+  }
+  for(let n in obj){
+    result.push(obj[n])
+  }
+  return result;
+}
+// console.log(removeDuplicate([4,4,1,3,3,2]));
+
+//----------------------------------------------------------------------------------------------------------
+
+//Write a program to check if two arrays are equal or not.
+
+function equalArray(arr1, arr2) {
+if(arr1.length === arr2.length){
+  for(let i=0;i<arr1.length && arr2.length;i++){
+    if(arr1[i] !=arr2[i]){
+      return false
+    }
+    return true
+  }
+}
+}
+// console.log(equalArray([1,2,3],[2,3,4]));
+
+//-----------------------------------------------------------------------------------------------------
+
+//Write a program to concatenate two arrays.
+
+function twodarray(arr,arr1){
+  arr=[1,2,3,4];
+arr1=[5,6,7,8];
+let arr3=[];
+for(let i=0;i<arr.length;i++){
+ arr3.push(arr1[i],arr[i])
+}
+ return arr3
+}
+
+console.log(twodarray([1,2,3,4],[5,6,7,8]))
+
+
+//----------------------------------------------------------------------------------------------------------
+
+// Write a program to find the index of a specific element in an array.
+
+const findIndexOfParticularElement=(arr,value)=>{
+  let index=-1;
+  for(let i=0;i<arr.length;i++){
+if(value=== arr[i]){
+  index=i
+}
+  }
+  return index;
+}
+// console.log(findIndexOfParticularElement([1,2,3,4,5],8))
